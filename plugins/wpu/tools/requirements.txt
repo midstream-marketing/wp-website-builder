@@ -1,0 +1,4 @@
+# Python packages for WP Ultimate Build tools. Install once per computer:
+#   python -m pip install --user -r "<plugin folder>/tools/requirements.txt"
+# Everything else in tools/ uses only the standard library.
+paramiko>=3.4,<6     # tools/hosting/sftp.py (SFTP/SSH)

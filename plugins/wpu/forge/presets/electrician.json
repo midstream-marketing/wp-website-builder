@@ -1,0 +1,150 @@
+{
+  "_trade": "electrician",
+  "_note": "Defaults for an electrical contractor. Electrical work is licence-gated in every US state — every licence, certification and response-time claim must be confirmed per client before publishing.",
+  "business": {
+    "type": "Electrical services",
+    "primary_cta": "Get a Free Quote",
+    "secondary_cta": "Call Now"
+  },
+  "seo": {
+    "schema_type": "Electrician"
+  },
+  "services": [
+    {
+      "name": "Emergency Electrical Repair",
+      "slug": "emergency-electrical",
+      "icon": "fas fa-bolt",
+      "summary": "Dead circuits, burning smells and tripping breakers diagnosed and made safe.",
+      "search_terms": [
+        "no power",
+        "breaker keeps tripping",
+        "burning smell outlet"
+      ]
+    },
+    {
+      "name": "Panel Upgrades",
+      "slug": "panel-upgrades",
+      "icon": "fas fa-square-poll-vertical",
+      "summary": "Fuse boxes and undersized panels replaced with correctly rated service for a modern load.",
+      "search_terms": [
+        "electrical panel upgrade",
+        "200 amp service",
+        "fuse box replacement"
+      ]
+    },
+    {
+      "name": "Wiring & Rewiring",
+      "slug": "wiring",
+      "icon": "fas fa-plug",
+      "summary": "Knob-and-tube and aluminium branch circuits replaced, plus new circuits for additions.",
+      "search_terms": [
+        "house rewiring",
+        "aluminum wiring",
+        "add outlet"
+      ]
+    },
+    {
+      "name": "Lighting Installation",
+      "slug": "lighting",
+      "icon": "fas fa-lightbulb",
+      "summary": "Interior, exterior, recessed and landscape lighting installed and switched properly.",
+      "search_terms": [
+        "recessed lighting install",
+        "ceiling fan install",
+        "outdoor lighting"
+      ]
+    },
+    {
+      "name": "EV Charger Installation",
+      "slug": "ev-charger",
+      "icon": "fas fa-charging-station",
+      "summary": "Level 2 home chargers installed on a dedicated circuit with the load calculated first.",
+      "search_terms": [
+        "ev charger install",
+        "home charger",
+        "level 2 charger"
+      ]
+    },
+    {
+      "name": "Generators & Backup Power",
+      "slug": "generators",
+      "icon": "fas fa-battery-full",
+      "summary": "Standby and portable generator hookups with a correctly installed transfer switch.",
+      "search_terms": [
+        "whole house generator",
+        "transfer switch",
+        "backup power"
+      ]
+    }
+  ],
+  "trust_items": [
+    "Licensed & Insured",
+    "Upfront Pricing",
+    "Code-Compliant Work",
+    "Clean & Tidy"
+  ],
+  "process": [
+    {
+      "title": "Describe the fault",
+      "text": "Call or send the form with what is happening and where. If anything is smoking, sparking or hot to the touch, cut the power at the breaker and call rather than message."
+    },
+    {
+      "title": "Diagnose and quote",
+      "text": "We find the actual fault, explain it plainly, and price the work before starting."
+    },
+    {
+      "title": "Repair and test",
+      "text": "Work completed to code, tested in front of you, and the area left clean."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Why does my breaker keep tripping?",
+      "a": "A breaker that trips repeatedly is doing its job — it is reporting a real fault, usually an overloaded circuit, a short, or a failing appliance. Resetting it over and over is the one response that is genuinely unsafe."
+    },
+    {
+      "q": "Do I need a permit for electrical work?",
+      "a": "PLACEHOLDER — confirm the local permitting position per client and jurisdiction before publishing."
+    },
+    {
+      "q": "Is aluminium wiring dangerous?",
+      "a": "It is not automatically unsafe, but the terminations are where it fails. Homes wired with aluminium branch circuits in the 1960s and 70s usually need the connections remediated rather than the whole house rewired."
+    },
+    {
+      "q": "Can you install an EV charger in my garage?",
+      "a": "Usually. It depends on the spare capacity in your panel and the run to the parking spot. We do a load calculation first rather than assuming the panel can take it."
+    },
+    {
+      "q": "What does a callout cost?",
+      "a": "PLACEHOLDER — confirm the callout and diagnostic fee policy before publishing."
+    },
+    {
+      "q": "Are you licensed and insured?",
+      "a": "PLACEHOLDER — state the actual licence number and insurance position, or remove this question. Never publish an unverified licence claim."
+    }
+  ],
+  "photo_brief": [
+    "Electrician in branded workwear, clean and approachable — hero candidate",
+    "Van with signage",
+    "Open panel with tidy, labelled wiring",
+    "Recessed lighting finished in a real room",
+    "EV charger installed on a garage wall",
+    "Before/after of a rewired panel"
+  ],
+  "palette_hint": {
+    "note": "Convention is deep navy or black with a high-visibility yellow or amber accent.",
+    "primary": "#12263A",
+    "secondary": "#0B121A",
+    "accent": "#F2B705"
+  },
+  "fonts_hint": {
+    "heading": "Archivo",
+    "body": "Inter"
+  },
+  "image_search": [
+    "electrician working",
+    "electrical panel",
+    "ev charger install",
+    "lighting installation"
+  ]
+}

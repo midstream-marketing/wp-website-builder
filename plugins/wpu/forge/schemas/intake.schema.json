@@ -1,0 +1,404 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "title": "Forge Intake",
+ "description": "Everything the pipeline needs from the client. The intake agent fills this by conversation; nothing downstream may invent a value that isn't here.",
+ "type": "object",
+ "required": [
+  "business",
+  "services",
+  "contact",
+  "pages"
+ ],
+ "properties": {
+  "business": {
+   "type": "object",
+   "required": [
+    "name",
+    "type",
+    "description"
+   ],
+   "properties": {
+    "name": {
+     "type": "string"
+    },
+    "legal_name": {
+     "type": "string"
+    },
+    "type": {
+     "type": "string",
+     "description": "e.g. HVAC contractor, aesthetic clinic, real estate agency"
+    },
+    "description": {
+     "type": "string",
+     "description": "2-4 sentences in the owner's own words"
+    },
+    "founded": {
+     "type": "string"
+    },
+    "usp": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "differentiators; drives hero + trust bar"
+    },
+    "credentials": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     },
+     "description": "licences, insurance, certifications, awards"
+    },
+    "tone": {
+     "type": "string",
+     "enum": [
+      "professional",
+      "friendly",
+      "premium",
+      "technical",
+      "urgent"
+     ],
+     "default": "professional"
+    },
+    "primary_cta": {
+     "type": "string",
+     "default": "Get a Free Quote"
+    },
+    "secondary_cta": {
+     "type": "string"
+    }
+   }
+  },
+  "services": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "name"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "slug": {
+      "type": "string"
+     },
+     "summary": {
+      "type": "string"
+     },
+     "detail": {
+      "type": "string"
+     },
+     "icon": {
+      "type": "string",
+      "description": "Font Awesome class, e.g. fas fa-wrench"
+     },
+     "image": {
+      "type": "string"
+     },
+     "price_from": {
+      "type": "string"
+     },
+     "own_page": {
+      "type": "boolean",
+      "default": false
+     },
+     "keywords": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     }
+    }
+   }
+  },
+  "areas_served": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": [
+     "name"
+    ],
+    "properties": {
+     "name": {
+      "type": "string"
+     },
+     "slug": {
+      "type": "string"
+     },
+     "region": {
+      "type": "string"
+     },
+     "own_page": {
+      "type": "boolean",
+      "default": false
+     },
+     "landmarks": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "local proof points for the copy agent"
+     }
+    }
+   }
+  },
+  "contact": {
+   "type": "object",
+   "required": [
+    "phone",
+    "email"
+   ],
+   "properties": {
+    "phone": {
+     "type": "string"
+    },
+    "phone_display": {
+     "type": "string"
+    },
+    "email": {
+     "type": "string"
+    },
+    "address": {
+     "type": "string"
+    },
+    "city": {
+     "type": "string"
+    },
+    "state": {
+     "type": "string"
+    },
+    "postcode": {
+     "type": "string"
+    },
+    "country": {
+     "type": "string"
+    },
+    "map_query": {
+     "type": "string"
+    },
+    "hours": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "emergency_24_7": {
+     "type": "boolean",
+     "default": false
+    },
+    "socials": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "network": {
+        "type": "string",
+        "enum": [
+         "facebook",
+         "instagram",
+         "linkedin",
+         "youtube",
+         "x",
+         "tiktok",
+         "pinterest",
+         "whatsapp"
+        ]
+       },
+       "url": {
+        "type": "string"
+       }
+      }
+     }
+    }
+   }
+  },
+  "brand": {
+   "type": "object",
+   "properties": {
+    "logo": {
+     "type": "string",
+     "description": "absolute URL, must be publicly reachable at build time"
+    },
+    "logo_light": {
+     "type": "string"
+    },
+    "favicon": {
+     "type": "string"
+    },
+    "colors": {
+     "type": "object",
+     "properties": {
+      "primary": {
+       "type": "string"
+      },
+      "secondary": {
+       "type": "string"
+      },
+      "accent": {
+       "type": "string"
+      },
+      "text": {
+       "type": "string"
+      }
+     }
+    },
+    "fonts": {
+     "type": "object",
+     "properties": {
+      "heading": {
+       "type": "string"
+      },
+      "body": {
+       "type": "string"
+      }
+     }
+    },
+    "images": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "url"
+      ],
+      "properties": {
+       "url": {
+        "type": "string"
+       },
+       "role": {
+        "type": "string",
+        "enum": [
+         "hero",
+         "about",
+         "service",
+         "team",
+         "gallery",
+         "background",
+         "cta"
+        ]
+       },
+       "subject": {
+        "type": "string",
+        "description": "what is actually in the photo; the copy agent writes alt text from this"
+       }
+      }
+     }
+    },
+    "reference_screenshots": {
+     "type": "array",
+     "description": "mockups or competitor screenshots the design agent reads for layout + palette",
+     "items": {
+      "type": "object",
+      "required": [
+       "path"
+      ],
+      "properties": {
+       "path": {
+        "type": "string"
+       },
+       "intent": {
+        "type": "string",
+        "enum": [
+         "palette",
+         "layout",
+         "typography",
+         "full"
+        ],
+        "default": "full"
+       },
+       "note": {
+        "type": "string",
+        "description": "what the client liked about it"
+       }
+      }
+     }
+    },
+    "type_scale": {
+     "type": "number",
+     "minimum": 0.8,
+     "maximum": 1.5,
+     "default": 1.0,
+     "description": "multiplies every type step in tokens.py. Raise it for an audience that needs a larger base size (over-60s, accessibility briefs); leave it at 1.0 otherwise."
+    },
+    "reference_profile": {
+     "type": "string",
+     "description": "path to an analyse_reference.py profile. Passed to forge.py as --profile, it fills any brand field left empty here and reports where the build diverges from the reference. Never overrides a value stated above."
+    }
+   }
+  },
+  "pages": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "type": "object",
+    "required": [
+     "key",
+     "type"
+    ],
+    "properties": {
+     "key": {
+      "type": "string",
+      "description": "home, about, services, contact, faq, service:<slug>, area:<slug>"
+     },
+     "type": {
+      "type": "string",
+      "enum": [
+       "page",
+       "header",
+       "footer",
+       "single-post",
+       "archive",
+       "loop-item",
+       "error-404"
+      ]
+     },
+     "title": {
+      "type": "string"
+     },
+     "target_keyword": {
+      "type": "string"
+     },
+     "secondary_keywords": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "blocks": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "optional explicit block sequence; layout agent decides if omitted"
+     }
+    }
+   }
+  },
+  "seo": {
+   "type": "object",
+   "properties": {
+    "primary_location": {
+     "type": "string"
+    },
+    "service_radius": {
+     "type": "string"
+    },
+    "competitors": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "language": {
+     "type": "string",
+     "default": "en-US"
+    },
+    "schema_type": {
+     "type": "string",
+     "default": "LocalBusiness"
+    }
+   }
+  }
+ }
+}

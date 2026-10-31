@@ -1,0 +1,150 @@
+{
+  "_trade": "general-contractor",
+  "_note": "Defaults for a general contractor / remodeler. Licence, bonding and warranty claims must be confirmed per client — this trade is the most heavily regulated of the set.",
+  "business": {
+    "type": "General contracting and remodeling",
+    "primary_cta": "Request a Consultation",
+    "secondary_cta": "Call Now"
+  },
+  "seo": {
+    "schema_type": "GeneralContractor"
+  },
+  "services": [
+    {
+      "name": "Kitchen Remodeling",
+      "slug": "kitchen-remodeling",
+      "icon": "fas fa-kitchen-set",
+      "summary": "Full kitchen renovation — layout, cabinetry, counters, lighting and the trades coordinated.",
+      "search_terms": [
+        "kitchen remodel cost",
+        "kitchen renovation",
+        "cabinet installation"
+      ]
+    },
+    {
+      "name": "Bathroom Remodeling",
+      "slug": "bathroom-remodeling",
+      "icon": "fas fa-bath",
+      "summary": "Bathrooms taken back and rebuilt, with waterproofing detailed properly before tile.",
+      "search_terms": [
+        "bathroom remodel",
+        "shower replacement",
+        "bathroom renovation cost"
+      ]
+    },
+    {
+      "name": "Home Additions",
+      "slug": "home-additions",
+      "icon": "fas fa-house-chimney-window",
+      "summary": "Extensions and conversions, from permit drawings through to final finish.",
+      "search_terms": [
+        "home addition cost",
+        "room addition",
+        "garage conversion"
+      ]
+    },
+    {
+      "name": "Basement Finishing",
+      "slug": "basement-finishing",
+      "icon": "fas fa-stairs",
+      "summary": "Basements insulated, framed and finished into rooms that feel like the rest of the house.",
+      "search_terms": [
+        "basement finishing",
+        "basement remodel cost"
+      ]
+    },
+    {
+      "name": "Decks & Outdoor Living",
+      "slug": "decks",
+      "icon": "fas fa-tree-city",
+      "summary": "Decks, pergolas and outdoor kitchens built to survive the weather they sit in.",
+      "search_terms": [
+        "deck builder",
+        "deck cost",
+        "outdoor kitchen"
+      ]
+    },
+    {
+      "name": "Repairs & Punch Lists",
+      "slug": "repairs",
+      "icon": "fas fa-screwdriver-wrench",
+      "summary": "Multi-item repair lists handled in one visit by one accountable contact.",
+      "search_terms": [
+        "handyman services",
+        "home repair",
+        "punch list"
+      ]
+    }
+  ],
+  "trust_items": [
+    "Licensed & Insured",
+    "Written Fixed Quotes",
+    "One Point of Contact",
+    "Clean Job Sites"
+  ],
+  "process": [
+    {
+      "title": "Consultation",
+      "text": "We walk the space, talk through what you want and what it realistically costs, before anything is drawn."
+    },
+    {
+      "title": "Scope and schedule",
+      "text": "An itemised scope with materials named and a schedule you can hold us to."
+    },
+    {
+      "title": "Build and hand over",
+      "text": "Trades coordinated, site kept clean, and a walkthrough before final payment."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long will my project take?",
+      "a": "It depends on scope, permits and material lead times. We give a realistic schedule with the quote and tell you which items are most likely to move it."
+    },
+    {
+      "q": "Do you handle permits?",
+      "a": "PLACEHOLDER — confirm whether the client pulls permits and in which jurisdictions."
+    },
+    {
+      "q": "Will I have one point of contact?",
+      "a": "Yes. Subcontractors are coordinated by us, not by you."
+    },
+    {
+      "q": "How do payments work?",
+      "a": "PLACEHOLDER — confirm the client's deposit and draw schedule before publishing."
+    },
+    {
+      "q": "Are you licensed, bonded and insured?",
+      "a": "PLACEHOLDER — state actual licence number, bonding and insurance. Do not publish unverified."
+    },
+    {
+      "q": "Can I live in the house during the work?",
+      "a": "Usually, for a single-room project. Whole-floor and kitchen work is harder — we will be straight with you about which weeks will be genuinely disruptive."
+    }
+  ],
+  "photo_brief": [
+    "Owner or lead carpenter on a clean site — hero candidate",
+    "Branded truck",
+    "Framing or rough-in in progress",
+    "Finished kitchen, wide angle, styled but real",
+    "Finished bathroom",
+    "Deck or outdoor space",
+    "Before/after pair of the same room"
+  ],
+  "palette_hint": {
+    "note": "Convention is charcoal or deep navy with a warm accent (amber or terracotta).",
+    "primary": "#1F2933",
+    "secondary": "#11161C",
+    "accent": "#D97A34"
+  },
+  "fonts_hint": {
+    "heading": "Archivo",
+    "body": "Inter"
+  },
+  "image_search": [
+    "contractor kitchen remodel",
+    "bathroom renovation",
+    "home construction framing",
+    "deck building"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "_note": "Everything a new client build actually needs. Services, process, FAQs, palette and fonts all come from the trade preset; only what is genuinely specific to this business lives here.",
+  "business": {
+    "name": "Summit Ridge Roofing",
+    "description": "Family-run roofing contractor serving the Denver metro. Replacements, repairs and storm damage work, with a written scope on every job."
+  },
+  "contact": {
+    "phone": "+13035550142",
+    "phone_display": "(303) XXX-XXXX",
+    "email": "info@summitridgeroofing.example",
+    "city": "Denver",
+    "state": "CO",
+    "map_query": "Denver, Colorado"
+  },
+  "areas_served": [
+    {"name": "Denver", "slug": "denver"},
+    {"name": "Aurora", "slug": "aurora"},
+    {"name": "Lakewood", "slug": "lakewood"},
+    {"name": "Arvada", "slug": "arvada"},
+    {"name": "Westminster", "slug": "westminster"},
+    {"name": "Centennial", "slug": "centennial"}
+  ],
+  "pages": [
+    {"key": "header", "type": "header"},
+    {"key": "footer", "type": "footer"},
+    {"key": "home", "type": "page", "title": "Home"},
+    {"key": "services", "type": "page", "title": "Services"},
+    {"key": "contact", "type": "page", "title": "Contact"}
+  ]
+}

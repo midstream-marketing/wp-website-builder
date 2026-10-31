@@ -1,0 +1,146 @@
+{
+  "_trade": "hvac",
+  "_note": "Heating, ventilation and air conditioning. Supplies the parts that are the same for every HVAC contractor — service scope, the sequence a call actually follows, and the questions homeowners ask before they book. Anything licence-, warranty- or price-specific is left as a PLACEHOLDER because it varies by state and by dealer agreement, and a wrong answer there is the kind a customer quotes back at you.",
+  "business": {
+    "type": "Heating & air conditioning contractor",
+    "primary_cta": "Schedule Service",
+    "secondary_cta": "Call Now"
+  },
+  "seo": {
+    "service_area_phrase": "and the surrounding area"
+  },
+  "services": [
+    {
+      "name": "Air Conditioning Repair",
+      "slug": "air-conditioning-repair",
+      "icon": "fas fa-snowflake",
+      "summary": "Systems blowing warm, short-cycling, freezing up or tripping the breaker — diagnosed properly and repaired, not guessed at and parts-swapped.",
+      "search_terms": ["ac not cooling", "air conditioner repair", "ac blowing warm air"]
+    },
+    {
+      "name": "Heating Repair",
+      "slug": "heating-repair",
+      "icon": "fas fa-fire",
+      "summary": "Furnaces and air handlers that will not light, will not stay lit, or cannot hold the house at temperature when the weather turns.",
+      "search_terms": ["furnace repair", "heat not working", "no heat"]
+    },
+    {
+      "name": "Heat Pump Repair",
+      "slug": "heat-pump-repair",
+      "icon": "fas fa-arrows-rotate",
+      "summary": "Defrost faults, reversing valves, low charge and auxiliary heat that runs when it should not — the failures that quietly double a winter power bill.",
+      "search_terms": ["heat pump repair", "heat pump not heating", "heat pump iced up"]
+    },
+    {
+      "name": "System Replacement & Installation",
+      "slug": "system-replacement-installation",
+      "icon": "fas fa-screwdriver-wrench",
+      "summary": "Full changeouts sized to the house rather than to the old unit, with the ductwork, line set and electrical checked as part of the job.",
+      "search_terms": ["hvac replacement", "new ac unit", "furnace installation"]
+    },
+    {
+      "name": "Preventive Maintenance & Tune-Ups",
+      "slug": "maintenance-tune-ups",
+      "icon": "fas fa-clipboard-check",
+      "summary": "Seasonal service that catches a failing capacitor or a low charge in the spring instead of on the first hot night in July.",
+      "search_terms": ["ac tune up", "hvac maintenance", "furnace tune up"]
+    },
+    {
+      "name": "Residential HVAC Service",
+      "slug": "residential-hvac",
+      "icon": "fas fa-house",
+      "summary": "Whole-home comfort work — thermostats, airflow balance, humidity and the rooms that never quite match the rest of the house.",
+      "search_terms": ["home hvac service", "hvac contractor near me", "uneven room temperature"]
+    },
+    {
+      "name": "Light Commercial HVAC",
+      "slug": "light-commercial-hvac",
+      "icon": "fas fa-store",
+      "summary": "Offices, shops and small units kept running, with work scheduled around trading hours wherever it can be.",
+      "search_terms": ["commercial hvac", "rooftop unit repair", "business ac repair"]
+    }
+  ],
+  "trust_items": [
+    "Locally Owned & Operated",
+    "Straight, Upfront Pricing",
+    "Quality Workmanship",
+    "Residential & Light Commercial"
+  ],
+  "process": [
+    {
+      "title": "Tell us what it's doing",
+      "text": "Call or send the form and describe what the system is doing — or not doing. We'll tell you what it sounds like and what a visit involves."
+    },
+    {
+      "title": "We diagnose it properly",
+      "text": "We find the actual fault before quoting a part. You get told what failed, why it failed, and what it takes to put right."
+    },
+    {
+      "title": "You approve the price",
+      "text": "The price comes before the work, not after it. Repair or replace, you decide with the numbers in front of you."
+    },
+    {
+      "title": "The job gets finished right",
+      "text": "We complete the work, test the system through a full cycle, and leave the space the way we found it."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Should I repair my system or replace it?",
+      "a": "It depends on the age of the unit, what has failed, and what the repair costs against a replacement. As a rule, a system past about fifteen years facing a major component failure is usually worth replacing — but we will give you both numbers and let you decide rather than making that call for you."
+    },
+    {
+      "q": "How often should my system be serviced?",
+      "a": "Twice a year is the standard: cooling checked in the spring, heating checked in the fall. A heat pump runs year-round and benefits most from both visits, because it never gets an off-season."
+    },
+    {
+      "q": "Why is one room always hotter or colder than the rest?",
+      "a": "Usually airflow rather than the unit itself — undersized or leaking ductwork, a closed damper, a blocked return, or a system sized for a different floor plan. It is worth diagnosing properly, because turning the thermostat down is treating the symptom."
+    },
+    {
+      "q": "What does an inverter heat pump actually do differently?",
+      "a": "A conventional system is either full-on or off. An inverter system varies its output to match what the house actually needs, so it runs longer at lower power instead of cycling hard. That generally means steadier temperatures, quieter operation, and less energy used to hold the same comfort level."
+    },
+    {
+      "q": "Do you charge for a service call or a quote?",
+      "a": "PLACEHOLDER — confirm the diagnostic/service-call fee and whether replacement quotes are free before publishing."
+    },
+    {
+      "q": "Do you offer after-hours or emergency service?",
+      "a": "PLACEHOLDER — confirm after-hours availability and any callout terms before publishing."
+    },
+    {
+      "q": "What warranty comes with your work?",
+      "a": "PLACEHOLDER — confirm the labour warranty period and how manufacturer equipment warranties are registered and handled."
+    },
+    {
+      "q": "Do you offer financing on a new system?",
+      "a": "PLACEHOLDER — confirm whether financing is offered and through which provider before publishing."
+    }
+  ],
+  "photo_brief": [
+    "Technician at an outdoor condenser with gauges connected — hands and equipment in frame, face optional",
+    "Clean indoor air handler or furnace install in a closet or attic, showing tidy line set and wiring",
+    "Van with signage parked at a residential curb — establishes the local, owner-operated read",
+    "Thermostat being set on a wall, homeowner's hand in shot",
+    "Technician talking a homeowner through a reading on a meter or tablet at the kitchen table",
+    "New inverter heat pump outdoor unit on its pad, straight-on hero angle",
+    "Before/after pair of an old rusted unit and its replacement in the same position"
+  ],
+  "palette_hint": {
+    "note": "HVAC convention splits the trade in two — blue for cooling, red or orange for heat. Use the client's logo colours where they exist; this is only a fallback.",
+    "primary": "#14384F",
+    "secondary": "#0E1C26",
+    "accent": "#C2402A"
+  },
+  "fonts_hint": {
+    "heading": "Archivo",
+    "body": "Inter"
+  },
+  "image_search": [
+    "hvac technician outdoor condenser gauges",
+    "heat pump installation residential",
+    "furnace air handler install",
+    "hvac service van residential street"
+  ]
+}

@@ -1,0 +1,149 @@
+{
+  "_trade": "turf",
+  "_note": "Defaults for an artificial turf installer. The base build is the differentiator in this trade — cheap installs fail underneath, and the copy should say so.",
+  "business": {
+    "type": "Artificial turf installation",
+    "primary_cta": "Get a Free Estimate",
+    "secondary_cta": "Call Now"
+  },
+  "seo": {
+    "schema_type": "LocalBusiness"
+  },
+  "services": [
+    {
+      "name": "Front & Back Yards",
+      "slug": "residential-turf",
+      "icon": "fas fa-house",
+      "summary": "A flawless lawn year-round — no mowing, no watering, no muddy patches.",
+      "search_terms": [
+        "artificial grass cost",
+        "fake grass backyard",
+        "turf installation"
+      ]
+    },
+    {
+      "name": "Pet Turf",
+      "slug": "pet-turf",
+      "icon": "fas fa-dog",
+      "summary": "Antimicrobial, fully draining turf built for dogs. Easy to rinse, hard to dig up.",
+      "search_terms": [
+        "pet turf",
+        "dog friendly artificial grass",
+        "turf for dogs"
+      ]
+    },
+    {
+      "name": "Putting Greens",
+      "slug": "putting-greens",
+      "icon": "fas fa-golf-ball-tee",
+      "summary": "Backyard greens with true roll, custom contours and your choice of cup layout.",
+      "search_terms": [
+        "backyard putting green",
+        "artificial putting green cost"
+      ]
+    },
+    {
+      "name": "Playground Turf",
+      "slug": "playground-turf",
+      "icon": "fas fa-child-reaching",
+      "summary": "Shock-pad rated surfaces that meet fall-height safety standards for play areas.",
+      "search_terms": [
+        "playground turf",
+        "safety surfacing",
+        "play area grass"
+      ]
+    },
+    {
+      "name": "Commercial Turf",
+      "slug": "commercial-turf",
+      "icon": "fas fa-building",
+      "summary": "Amenity decks, courtyards and frontage that stay green on zero maintenance.",
+      "search_terms": [
+        "commercial artificial turf",
+        "apartment courtyard turf"
+      ]
+    },
+    {
+      "name": "Turf Replacement",
+      "slug": "turf-replacement",
+      "icon": "fas fa-rotate",
+      "summary": "Failing turf lifted, the base corrected, and a system installed that lasts.",
+      "search_terms": [
+        "replace artificial turf",
+        "turf repair",
+        "turf rippling"
+      ]
+    }
+  ],
+  "trust_items": [
+    "Free On-Site Estimates",
+    "Insured",
+    "Pet & Child Safe",
+    "Workmanship Warranty"
+  ],
+  "process": [
+    {
+      "title": "Free on-site estimate",
+      "text": "We measure, look at drainage and grade, and talk through turf options. You get a fixed written price."
+    },
+    {
+      "title": "Design and schedule",
+      "text": "Turf line, infill and edging agreed, then an install date locked in."
+    },
+    {
+      "title": "Installed and inspected",
+      "text": "Excavate, compact the base, lay and seam, infill and power-broom. We walk the finished job with you."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How long does artificial grass last?",
+      "a": "A properly installed premium turf typically performs for 15 to 20 years. Lifespan comes down to the base and the traffic far more than the turf itself."
+    },
+    {
+      "q": "Does it get hot?",
+      "a": "It sits warmer than natural grass in direct sun. Heat-reflective yarns reduce it, a rinse cools it immediately, and shade makes the largest difference on west-facing yards."
+    },
+    {
+      "q": "What happens when it rains hard?",
+      "a": "Perforated turf over a compacted, free-draining base takes the water straight through. Turf that floods is a base problem, not a turf problem."
+    },
+    {
+      "q": "Is it safe for pets and children?",
+      "a": "Yes — lead-free and non-toxic. Pet installations add an antimicrobial infill and a flushable drainage layer, which is what stops odour developing."
+    },
+    {
+      "q": "How much does it cost?",
+      "a": "PLACEHOLDER — confirm whether the client quotes a per-square-foot range publicly, or estimates on site only."
+    },
+    {
+      "q": "Do you offer a warranty?",
+      "a": "PLACEHOLDER — confirm the manufacturer UV warranty term and the client's own installation warranty before publishing."
+    }
+  ],
+  "photo_brief": [
+    "Crew installing turf, base visible — hero candidate",
+    "Truck and trailer with signage",
+    "Compacted base before turf goes down",
+    "Finished back yard, wide angle",
+    "Dog on finished pet turf",
+    "Putting green with cups",
+    "Before/after of the same yard"
+  ],
+  "palette_hint": {
+    "note": "Convention is lime or grass green against near-black.",
+    "primary": "#76BC21",
+    "secondary": "#0B0D0B",
+    "accent": "#8FD633"
+  },
+  "fonts_hint": {
+    "heading": "Raleway",
+    "body": "Inter"
+  },
+  "image_search": [
+    "artificial turf installation",
+    "pet turf dog",
+    "putting green backyard",
+    "turf base preparation"
+  ]
+}

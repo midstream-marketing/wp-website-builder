@@ -1,0 +1,66 @@
+{
+  "_trade": "plumber",
+  "_note": "Defaults for a plumbing contractor. Everything here is overridable by the client's own intake.json — the preset only fills what the client file leaves out. Service scope, licence claims and response times must still be confirmed per client.",
+
+  "business": {
+    "type": "Plumbing services",
+    "primary_cta": "Get a Free Quote",
+    "secondary_cta": "Call Now"
+  },
+  "seo": {"schema_type": "Plumber"},
+
+  "services": [
+    {"name": "Emergency Plumbing Repair", "slug": "emergency-plumbing-repair", "icon": "fas fa-droplet",
+     "summary": "Burst pipes, failed shut-offs and sudden leaks handled fast, with the cause fixed rather than patched.",
+     "search_terms": ["burst pipe", "no water", "pipe leaking"]},
+    {"name": "Drain Cleaning & Unclogging", "slug": "drain-cleaning", "icon": "fas fa-arrow-down-long",
+     "summary": "Slow sinks, blocked tubs and backed-up lines cleared, with the line checked so it does not come back.",
+     "search_terms": ["clogged drain", "slow draining sink", "sewer backup"]},
+    {"name": "Water Heater Service", "slug": "water-heater-service", "icon": "fas fa-fire",
+     "summary": "Repair, replacement and new installation for tank and tankless systems, sized for the household.",
+     "search_terms": ["no hot water", "water heater leaking", "tankless install"]},
+    {"name": "Leak Detection & Repair", "slug": "leak-detection", "icon": "fas fa-magnifying-glass",
+     "summary": "Finding the leak before opening the wall — slab, supply line and fixture leaks traced and repaired.",
+     "search_terms": ["slab leak", "water bill high", "hidden leak"]},
+    {"name": "Bathroom & Kitchen Plumbing", "slug": "bathroom-kitchen-plumbing", "icon": "fas fa-sink",
+     "summary": "Faucets, sinks, toilets, disposals and shower valves — swapped, upgraded or plumbed for a remodel.",
+     "search_terms": ["toilet keeps running", "faucet replacement", "garbage disposal"]},
+    {"name": "Repiping & Water Lines", "slug": "repiping-water-lines", "icon": "fas fa-wrench",
+     "summary": "Failing galvanised and poly lines replaced, plus new supply runs for additions and outdoor fixtures.",
+     "search_terms": ["repipe house", "polybutylene replacement", "water line repair"]}
+  ],
+
+  "trust_items": ["Licensed & Insured", "Upfront Pricing", "Same-Day Service", "Workmanship Guaranteed"],
+
+  "process": [
+    {"title": "Tell us what's wrong", "text": "Call, text or send the form with a short description and a photo if you have one. We'll tell you straight away whether it's urgent."},
+    {"title": "Clear diagnosis and price", "text": "We find the actual cause and explain it in plain terms, with the price agreed before any work starts."},
+    {"title": "Fixed and left clean", "text": "The repair is completed, tested in front of you, and the space is left the way we found it."}
+  ],
+
+  "faqs": [
+    {"q": "Do you charge for a callout or an estimate?", "a": "PLACEHOLDER — confirm the callout and estimate policy with the client before publishing."},
+    {"q": "What should I do while I wait for a plumber?", "a": "For an active leak, shut off the water at the fixture stop or the main shut-off valve if you can reach it safely, and move anything that could be damaged. For a gas water heater issue, leave the appliance alone and call us."},
+    {"q": "How do I know if I have a slab leak?", "a": "The usual signs are a water bill that jumps with no change in use, warm patches on the floor, the sound of running water when everything is off, or unexplained damp in the flooring. It needs locating properly before anything is cut open."},
+    {"q": "Can you work on older properties?", "a": "Yes. Older homes often have galvanised or early poly supply lines that fail at the joints — we'll show you what's actually there and talk through whether a repair or a repipe makes more sense."},
+    {"q": "Do you handle both repairs and installations?", "a": "Both. Emergency repairs, drain cleaning, leak detection and water heater work sit alongside full installations for remodels."},
+    {"q": "How do I get a quote?", "a": "Call, text, or send the contact form with a short description and a photo if you can. For anything needing eyes on it, we'll arrange a visit and price the work before starting."}
+  ],
+
+  "photo_brief": [
+    "Owner or crew in branded workwear, outdoors, natural light — this is the hero",
+    "Van with signage, parked at a job",
+    "Hands working on a pipe or fixture, close crop",
+    "Water heater install, finished",
+    "Under-sink work in progress",
+    "Finished bathroom or kitchen fixture",
+    "Before/after pair of the same repair"
+  ],
+
+  "palette_hint": {
+    "note": "Trade convention is blue for water/plumbing. Use the client's logo colours where they exist.",
+    "primary": "#1B87D6", "secondary": "#0E1A2B", "accent": "#1268A8"
+  },
+  "fonts_hint": {"heading": "Archivo", "body": "Inter"},
+  "image_search": ["plumber pipe repair", "water heater install", "bathroom plumbing", "drain cleaning"]
+}

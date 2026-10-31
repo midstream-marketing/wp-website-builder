@@ -1,0 +1,66 @@
+{
+  "_trade": "roofing",
+  "_note": "Defaults for a roofing contractor. Storm/insurance work is the highest-intent path in this trade, so it leads the service list. Licence, warranty and manufacturer-certification claims must be confirmed per client.",
+
+  "business": {
+    "type": "Roofing contractor",
+    "primary_cta": "Get a Free Roof Inspection",
+    "secondary_cta": "Call Now"
+  },
+  "seo": {"schema_type": "RoofingContractor"},
+
+  "services": [
+    {"name": "Roof Replacement", "slug": "roof-replacement", "icon": "fas fa-house-chimney",
+     "summary": "Full tear-off and re-roof with a proper deck inspection, new underlayment and correct flashing detail.",
+     "search_terms": ["new roof cost", "roof replacement", "tear off reroof"]},
+    {"name": "Roof Repair", "slug": "roof-repair", "icon": "fas fa-screwdriver-wrench",
+     "summary": "Leaks traced to the actual entry point — flashing, valleys, boots and fasteners — not just patched at the stain.",
+     "search_terms": ["roof leak repair", "missing shingles", "ceiling water stain"]},
+    {"name": "Storm & Hail Damage", "slug": "storm-damage", "icon": "fas fa-cloud-bolt",
+     "summary": "Documented damage assessment with photographs, written for the way an insurance adjuster reads a claim.",
+     "search_terms": ["hail damage roof", "storm damage inspection", "roof insurance claim"]},
+    {"name": "Gutters & Drainage", "slug": "gutters", "icon": "fas fa-water",
+     "summary": "Seamless gutters, guards and downspout runs sized so water leaves the roof and the foundation alone.",
+     "search_terms": ["gutter replacement", "seamless gutters", "gutter guards"]},
+    {"name": "Siding & Exterior", "slug": "siding", "icon": "fas fa-grip-lines",
+     "summary": "Siding, soffit, fascia and trim repaired or replaced alongside roof work while access is already up.",
+     "search_terms": ["siding repair", "fascia replacement", "soffit repair"]},
+    {"name": "Roof Inspections", "slug": "roof-inspection", "icon": "fas fa-clipboard-check",
+     "summary": "Pre-purchase and post-storm inspections with a photographed report and remaining service life.",
+     "search_terms": ["roof inspection", "roof certification", "pre purchase roof"]}
+  ],
+
+  "trust_items": ["Licensed & Insured", "Free Inspections", "Insurance Claims Support", "Workmanship Warranty"],
+
+  "process": [
+    {"title": "Free inspection", "text": "We get on the roof, photograph what we find, and show you the actual condition rather than a verdict."},
+    {"title": "Written scope and price", "text": "An itemised scope with materials named, so you can compare it against any other quote line for line."},
+    {"title": "Installed and cleaned up", "text": "Tear-off, deck check, install, then a magnet sweep of the property before we leave."}
+  ],
+
+  "faqs": [
+    {"q": "How long does a roof replacement take?", "a": "Most single-family re-roofs are done in one to three days depending on size, pitch, layers coming off and the weather. We'll give you a realistic window with the quote rather than an optimistic one."},
+    {"q": "Will you work with my insurance company?", "a": "PLACEHOLDER — confirm how far the client is willing to go on claims support before publishing. Do not imply they negotiate or adjust on the homeowner's behalf unless that is accurate and permitted in their state."},
+    {"q": "How do I know if I have storm damage?", "a": "Hail bruising and wind creasing often are not visible from the ground. Common signs are granules collecting at downspouts, dented soft metals like vents and gutters, and lifted or missing shingles after a storm."},
+    {"q": "Can you just repair it instead of replacing?", "a": "Often, yes. Repair makes sense when the roof has service life left and the damage is localised. We'll tell you which one you're actually looking at, and why."},
+    {"q": "What warranty comes with the work?", "a": "PLACEHOLDER — confirm the manufacturer material warranty and the client's own workmanship warranty before publishing. Do not state a term that has not been verified."},
+    {"q": "Do you offer financing?", "a": "PLACEHOLDER — confirm whether the client offers financing and through which provider."}
+  ],
+
+  "photo_brief": [
+    "Owner or crew on a finished roof, safety gear on — hero candidate",
+    "Branded truck or trailer at a job site",
+    "Tear-off in progress showing decking",
+    "Close crop of correct flashing or valley detail",
+    "Finished roof, low angle, whole elevation",
+    "Hail or wind damage close-up for the storm page",
+    "Before/after pair of the same elevation"
+  ],
+
+  "palette_hint": {
+    "note": "Trade convention runs dark slate or charcoal with a high-visibility accent (orange or red).",
+    "primary": "#1F2933", "secondary": "#12181F", "accent": "#E4572E"
+  },
+  "fonts_hint": {"heading": "Oswald", "body": "Inter"},
+  "image_search": ["roofing contractor", "roof shingle installation", "roof tear off", "storm damage roof"]
+}

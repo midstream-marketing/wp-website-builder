@@ -1,0 +1,150 @@
+{
+  "_trade": "landscaping",
+  "_note": "Defaults for a landscaping / lawn care business. Design-build and recurring maintenance are two different buyers — the service list covers both.",
+  "business": {
+    "type": "Landscaping and lawn care",
+    "primary_cta": "Get a Free Design Consult",
+    "secondary_cta": "Call Now"
+  },
+  "seo": {
+    "schema_type": "LandscapingBusiness"
+  },
+  "services": [
+    {
+      "name": "Lawn Care & Maintenance",
+      "slug": "lawn-care",
+      "icon": "fas fa-seedling",
+      "summary": "Scheduled mowing, edging, feeding and seasonal treatment on a route you can rely on.",
+      "search_terms": [
+        "lawn mowing service",
+        "lawn care near me",
+        "weekly lawn maintenance"
+      ]
+    },
+    {
+      "name": "Landscape Design & Build",
+      "slug": "landscape-design",
+      "icon": "fas fa-pen-ruler",
+      "summary": "A drawn plan before anything is dug — planting, levels, lighting and hard materials together.",
+      "search_terms": [
+        "landscape design",
+        "backyard makeover",
+        "garden design"
+      ]
+    },
+    {
+      "name": "Patios & Hardscaping",
+      "slug": "hardscaping",
+      "icon": "fas fa-border-all",
+      "summary": "Paver patios, walkways, retaining walls and steps built on a base that will not move.",
+      "search_terms": [
+        "paver patio",
+        "retaining wall",
+        "walkway installation"
+      ]
+    },
+    {
+      "name": "Planting & Garden Beds",
+      "slug": "planting",
+      "icon": "fas fa-leaf",
+      "summary": "Beds designed for the light and soil you actually have, with mulch and edging detailed properly.",
+      "search_terms": [
+        "garden bed design",
+        "shrub planting",
+        "mulch installation"
+      ]
+    },
+    {
+      "name": "Irrigation & Drainage",
+      "slug": "irrigation",
+      "icon": "fas fa-droplet",
+      "summary": "Sprinkler systems, repairs and drainage that moves water away from the house.",
+      "search_terms": [
+        "sprinkler repair",
+        "irrigation install",
+        "yard drainage"
+      ]
+    },
+    {
+      "name": "Seasonal Cleanups",
+      "slug": "cleanups",
+      "icon": "fas fa-broom",
+      "summary": "Spring and autumn cleanups, leaf clearance, cutbacks and green waste removal.",
+      "search_terms": [
+        "fall cleanup",
+        "leaf removal",
+        "spring yard cleanup"
+      ]
+    }
+  ],
+  "trust_items": [
+    "Insured",
+    "Free Estimates",
+    "Design-Led",
+    "Reliable Schedules"
+  ],
+  "process": [
+    {
+      "title": "Walk the site",
+      "text": "We look at aspect, drainage, soil and access, and talk through how you actually want to use the space."
+    },
+    {
+      "title": "Plan and price",
+      "text": "A drawn plan and an itemised price, so you can phase the work if the whole thing is too much at once."
+    },
+    {
+      "title": "Build and maintain",
+      "text": "Installed to the plan, then kept up on a schedule if you want us to."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "Do you do one-off jobs or only contracts?",
+      "a": "Both. Design-build projects and one-off cleanups sit alongside the scheduled maintenance rounds."
+    },
+    {
+      "q": "When is the best time to plant?",
+      "a": "For most regions, autumn and early spring — roots establish before the plant is asked to carry summer heat. We will tell you if waiting a season gets you a better result."
+    },
+    {
+      "q": "How much does a patio cost?",
+      "a": "It comes down to square footage, material and how much excavation and base work the ground needs. The base is the part that decides whether it is still flat in five years, and it is the part cheap quotes leave out."
+    },
+    {
+      "q": "Do you offer maintenance after the build?",
+      "a": "PLACEHOLDER — confirm whether the client offers ongoing maintenance and on what schedule."
+    },
+    {
+      "q": "Can you work with my HOA?",
+      "a": "Yes. Where a submission is needed we will put together the plan and plant list in the format the board expects."
+    },
+    {
+      "q": "Are you insured?",
+      "a": "PLACEHOLDER — state the actual insurance position before publishing."
+    }
+  ],
+  "photo_brief": [
+    "Owner or crew working in a finished garden — hero candidate",
+    "Truck and trailer with signage",
+    "Paver patio being laid, base visible",
+    "Freshly striped lawn, low sun",
+    "Planted bed with clean mulch edge",
+    "Before/after of the same garden"
+  ],
+  "palette_hint": {
+    "note": "Convention is mid-to-deep green with a warm or bright accent.",
+    "primary": "#2E7D32",
+    "secondary": "#12210F",
+    "accent": "#8CC63F"
+  },
+  "fonts_hint": {
+    "heading": "Raleway",
+    "body": "Inter"
+  },
+  "image_search": [
+    "landscaping crew",
+    "paver patio installation",
+    "garden design",
+    "lawn mowing"
+  ]
+}

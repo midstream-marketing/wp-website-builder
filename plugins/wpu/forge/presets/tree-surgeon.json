@@ -1,0 +1,150 @@
+{
+  "_trade": "tree-surgeon",
+  "_note": "Defaults for a tree surgery / arborist business. Storm work is the highest-intent path. Certification (ISA etc.) and insurance claims must be confirmed per client.",
+  "business": {
+    "type": "Tree surgery and removal",
+    "primary_cta": "Get a Free Estimate",
+    "secondary_cta": "Call Now"
+  },
+  "seo": {
+    "schema_type": "LocalBusiness"
+  },
+  "services": [
+    {
+      "name": "Tree Removal",
+      "slug": "tree-removal",
+      "icon": "fas fa-tree",
+      "summary": "Dangerous and unwanted trees taken down safely, in sections where access is tight.",
+      "search_terms": [
+        "tree removal cost",
+        "dead tree removal",
+        "tree cutting service"
+      ]
+    },
+    {
+      "name": "Tree Trimming & Pruning",
+      "slug": "tree-trimming",
+      "icon": "fas fa-scissors",
+      "summary": "Crown thinning, deadwood removal and clearance cuts that keep the tree healthy.",
+      "search_terms": [
+        "tree trimming",
+        "tree pruning",
+        "crown reduction"
+      ]
+    },
+    {
+      "name": "Stump Grinding",
+      "slug": "stump-grinding",
+      "icon": "fas fa-circle-dot",
+      "summary": "Stumps ground below grade so the area can be turfed, paved or planted over.",
+      "search_terms": [
+        "stump grinding",
+        "stump removal cost",
+        "tree stump"
+      ]
+    },
+    {
+      "name": "Storm Damage Response",
+      "slug": "storm-damage",
+      "icon": "fas fa-wind",
+      "summary": "Fallen and hung-up limbs cleared, with the immediate hazard made safe first.",
+      "search_terms": [
+        "fallen tree",
+        "emergency tree removal",
+        "storm damage cleanup"
+      ]
+    },
+    {
+      "name": "Debris & Brush Cleanup",
+      "slug": "brush-cleanup",
+      "icon": "fas fa-broom",
+      "summary": "Brush, limbs and green waste hauled away so the site is left usable.",
+      "search_terms": [
+        "brush removal",
+        "yard debris hauling",
+        "green waste"
+      ]
+    },
+    {
+      "name": "Crane-Assisted Removal",
+      "slug": "crane-removal",
+      "icon": "fas fa-truck-arrow-right",
+      "summary": "Large or hazardous removals lifted out over structures rather than dropped.",
+      "search_terms": [
+        "crane tree removal",
+        "large tree removal",
+        "tree over house"
+      ]
+    }
+  ],
+  "trust_items": [
+    "Insured",
+    "Free Estimates",
+    "Clean Site Guaranteed",
+    "Emergency Response"
+  ],
+  "process": [
+    {
+      "title": "Free on-site estimate",
+      "text": "We look at the tree, the access and what is underneath it, then give you a written price."
+    },
+    {
+      "title": "Scheduled safely",
+      "text": "Rigging planned around structures, utilities and neighbouring property before anyone climbs."
+    },
+    {
+      "title": "Cleared and cleaned",
+      "text": "Debris removed and the site raked down. You should not be able to tell we were there apart from the tree."
+    }
+  ],
+  "faqs": [
+    {
+      "q": "How much does tree removal cost?",
+      "a": "It depends on height, spread, species, how close it is to structures and how difficult the access is. A tree that can be felled in one piece into open ground costs a fraction of the same tree over a roof. That is why the estimate is done on site."
+    },
+    {
+      "q": "Do you handle emergencies?",
+      "a": "PLACEHOLDER — confirm actual emergency availability and response time before publishing. Do not claim 24/7 unless it is true."
+    },
+    {
+      "q": "Will you clean up afterwards?",
+      "a": "Yes. Debris removal and a raked site are part of the job, not an extra line item."
+    },
+    {
+      "q": "Do I need permission to remove a tree?",
+      "a": "Sometimes. Protected species, conservation areas and HOA rules all bite. We will tell you if we think a permission is needed before any work is booked."
+    },
+    {
+      "q": "Can you save a tree instead of removing it?",
+      "a": "Often. Crown reduction, deadwood removal and bracing can buy a tree years. Removal is the last option, not the first quote."
+    },
+    {
+      "q": "Are you insured?",
+      "a": "PLACEHOLDER — state the actual insurance position. Tree work over structures is the one trade where clients genuinely check."
+    }
+  ],
+  "photo_brief": [
+    "Climber in harness up a tree, action shot — hero candidate",
+    "Chipper and truck with signage",
+    "Sectional dismantle in progress",
+    "Stump grinder working",
+    "Cleanly cut and raked finished site",
+    "Before/after of a crown reduction"
+  ],
+  "palette_hint": {
+    "note": "Convention is deep forest green with a bright accent.",
+    "primary": "#1E5631",
+    "secondary": "#0F1E14",
+    "accent": "#8CC63F"
+  },
+  "fonts_hint": {
+    "heading": "Oswald",
+    "body": "Inter"
+  },
+  "image_search": [
+    "tree surgeon climbing",
+    "tree removal chainsaw",
+    "stump grinding",
+    "arborist working"
+  ]
+}

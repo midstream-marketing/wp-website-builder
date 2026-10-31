@@ -1,0 +1,113 @@
+{
+ "_note": "Widget and dynamic-tag vocabulary contributed by a client's own WordPress plugin. Kept out of elementor-registry.json on purpose: that file is regenerated wholesale by build_registry_php.py from the Elementor source tree, so anything hand-added there is lost on the next remine. Entries here are merged in at load time by core.Registry and are additive only — a name that already exists in the mined registry is never overwritten. Controls are read off the plugin's register_controls(), never guessed; `_common` expands to the 112 shared element controls so a widget can still carry margin, padding and responsive visibility.",
+ "_plugins": {
+  "hdt_": {
+   "name": "Heritage Tours",
+   "version": "1.0.0",
+   "file": "heritage-tours/heritage-tours.php",
+   "author": "Heritage Day Tours"
+  },
+  "lc-": {
+   "name": "Lakes Site Tools",
+   "version": "1.0.0",
+   "file": "lakes-site-tools/lakes-site-tools.php",
+   "author": "Lakes Construction"
+  }
+ },
+ "widgets": {
+  "hdt_booking_form": {
+   "tier": "addon",
+   "plugin": "hdt_",
+   "controls": [
+    "product_id",
+    "date_style",
+    "_common"
+   ],
+   "verified": "heritage-tours/includes/elementor/class-hdt-widgets.php HDT_Widget_Booking_Form::register_controls"
+  },
+  "hdt_departures": {
+   "tier": "addon",
+   "plugin": "hdt_",
+   "controls": [
+    "product_id",
+    "low_threshold",
+    "show_pickups",
+    "_common"
+   ],
+   "verified": "heritage-tours/includes/elementor/class-hdt-widgets.php HDT_Widget_Departures::register_controls"
+  },
+  "hdt_tour_content": {
+   "tier": "addon",
+   "plugin": "hdt_",
+   "controls": [
+    "field",
+    "heading",
+    "product_id",
+    "_common"
+   ],
+   "verified": "heritage-tours/includes/elementor/class-hdt-widgets.php HDT_Widget_Content::register_controls"
+  },
+  "hdt_waitlist": {
+   "tier": "addon",
+   "plugin": "hdt_",
+   "controls": [
+    "product_id",
+    "only_when_full",
+    "_common"
+   ],
+   "verified": "heritage-tours/includes/elementor/class-hdt-widgets.php HDT_Widget_Waitlist::register_controls"
+  }
+ },
+ "dynamic_tags": {
+  "hdt-tour-field": {
+   "settings_keys": [
+    "field"
+   ],
+   "controls": [
+    "title",
+    "editor"
+   ],
+   "verified": "heritage-tours/includes/elementor/class-hdt-dynamic-tags.php HDT_Tag_Tour_Field"
+  },
+  "hdt-next-departure": {
+   "settings_keys": [],
+   "controls": [
+    "title"
+   ],
+   "verified": "heritage-tours/includes/elementor/class-hdt-dynamic-tags.php HDT_Tag_Next_Departure"
+  },
+  "hdt-lowest-price": {
+   "settings_keys": [],
+   "controls": [
+    "title"
+   ],
+   "verified": "heritage-tours/includes/elementor/class-hdt-dynamic-tags.php HDT_Tag_Lowest_Price"
+  },
+  "hdt-seats-remaining": {
+   "settings_keys": [],
+   "controls": [
+    "title"
+   ],
+   "verified": "heritage-tours/includes/elementor/class-hdt-dynamic-tags.php HDT_Tag_Seats_Remaining"
+  },
+  "lc-contact": {
+   "settings_keys": [
+    "field"
+   ],
+   "controls": [
+    "title",
+    "text"
+   ],
+   "verified": "lakes-site-tools/includes/class-lst-dynamic-tags.php LST_Tag_Contact (Tag, TEXT_CATEGORY)"
+  },
+  "lc-contact-url": {
+   "settings_keys": [
+    "field"
+   ],
+   "controls": [
+    "link"
+   ],
+   "verified": "lakes-site-tools/includes/class-lst-dynamic-tags.php LST_Tag_Contact_Url (Data_Tag, URL_CATEGORY)"
+  }
+ }
+}

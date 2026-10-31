@@ -1,0 +1,10 @@
+{
+  "name": "wpu-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser tools for WP Ultimate Build. Playwright drives the system Chrome (channel: chrome), so no browser download.",
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}

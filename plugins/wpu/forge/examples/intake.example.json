@@ -1,0 +1,82 @@
+{
+  "business": {
+    "name": "Oasis Comfort Cooling & Heating",
+    "type": "HVAC contractor",
+    "description": "Family-run HVAC company serving the San Fernando Valley since 2009. We install, repair and maintain air conditioning and heating systems for homes and small commercial buildings.",
+    "founded": "2009",
+    "usp": ["Same-day service", "Upfront flat-rate pricing", "10-year workmanship warranty", "No overtime charges"],
+    "credentials": ["C-20 licensed", "Fully insured", "NATE-certified technicians", "EPA 608 certified"],
+    "tone": "friendly",
+    "primary_cta": "Book a Free Estimate",
+    "secondary_cta": "Call Now"
+  },
+  "services": [
+    {"name": "AC Repair", "slug": "ac-repair", "summary": "Fast diagnostics and same-day repair for any make or model.", "icon": "fas fa-snowflake", "own_page": true, "keywords": ["ac repair sherman oaks"]},
+    {"name": "AC Installation", "slug": "ac-installation", "summary": "High-efficiency system design, permits and install.", "icon": "fas fa-fan", "own_page": true},
+    {"name": "Heating Repair", "slug": "heating-repair", "summary": "Furnace and heat pump troubleshooting, done right.", "icon": "fas fa-fire", "own_page": true},
+    {"name": "Duct Cleaning", "slug": "duct-cleaning", "summary": "Remove dust, allergens and improve airflow.", "icon": "fas fa-wind"},
+    {"name": "Indoor Air Quality", "slug": "indoor-air-quality", "summary": "Filtration, purification and humidity control.", "icon": "fas fa-lungs"},
+    {"name": "Maintenance Plans", "slug": "maintenance-plans", "summary": "Twice-yearly tune-ups that prevent breakdowns.", "icon": "fas fa-screwdriver-wrench"}
+  ],
+  "areas_served": [
+    {"name": "Sherman Oaks", "slug": "sherman-oaks", "own_page": true, "landmarks": ["Ventura Boulevard", "Sherman Oaks Galleria"]},
+    {"name": "Van Nuys", "slug": "van-nuys", "own_page": true},
+    {"name": "Encino", "slug": "encino"},
+    {"name": "Studio City", "slug": "studio-city"},
+    {"name": "Woodland Hills", "slug": "woodland-hills"},
+    {"name": "Burbank", "slug": "burbank"},
+    {"name": "Glendale", "slug": "glendale"},
+    {"name": "Santa Clarita", "slug": "santa-clarita"}
+  ],
+  "contact": {
+    "phone": "+18185550142",
+    "phone_display": "(818) 555-0142",
+    "email": "service@oasiscomfort.example",
+    "address": "14500 Ventura Blvd, Sherman Oaks, CA 91403",
+    "city": "Sherman Oaks",
+    "state": "CA",
+    "map_query": "Sherman Oaks, CA",
+    "hours": ["Mon-Fri 7am-7pm", "Sat 8am-4pm", "Emergency service 24/7"],
+    "emergency_24_7": true,
+    "socials": [
+      {"network": "facebook", "url": "https://facebook.com/example"},
+      {"network": "instagram", "url": "https://instagram.com/example"}
+    ]
+  },
+  "brand": {
+    "logo": "https://cdn.example.com/oasis/logo.png",
+    "logo_light": "https://cdn.example.com/oasis/logo-light.png",
+    "colors": {"primary": "#0A6EBD", "secondary": "#0B1220", "accent": "#FF8A1F", "text": "#3C414C"},
+    "fonts": {"heading": "Manrope", "body": "Inter"},
+    "images": [
+      {"url": "https://cdn.example.com/oasis/hero.jpg", "role": "hero", "subject": "HVAC technician servicing a rooftop condenser unit"},
+      {"url": "https://cdn.example.com/oasis/team.jpg", "role": "team", "subject": "Oasis Comfort technicians beside a branded service van"},
+      {"url": "https://cdn.example.com/oasis/about.jpg", "role": "about", "subject": "Technician checking refrigerant pressure gauges"},
+      {"url": "https://cdn.example.com/oasis/service.jpg", "role": "service", "subject": "New high-efficiency AC unit installed beside a home"}
+    ],
+    "reference_screenshots": [
+      {"path": "refs/competitor-home.png", "intent": "layout", "note": "liked the split hero and the three-card service row"}
+    ]
+  },
+  "pages": [
+    {"key": "header", "type": "header"},
+    {"key": "footer", "type": "footer"},
+    {"key": "home", "type": "page", "target_keyword": "hvac contractor sherman oaks"},
+    {"key": "about", "type": "page", "target_keyword": "about oasis comfort hvac"},
+    {"key": "services", "type": "page", "target_keyword": "hvac services san fernando valley"},
+    {"key": "service:ac-repair", "type": "page", "target_keyword": "ac repair sherman oaks"},
+    {"key": "service:ac-installation", "type": "page", "target_keyword": "ac installation sherman oaks"},
+    {"key": "service:heating-repair", "type": "page", "target_keyword": "heating repair sherman oaks"},
+    {"key": "areas", "type": "page", "target_keyword": "hvac service areas san fernando valley"},
+    {"key": "area:sherman-oaks", "type": "page", "target_keyword": "hvac sherman oaks"},
+    {"key": "area:van-nuys", "type": "page", "target_keyword": "hvac van nuys"},
+    {"key": "faq", "type": "page", "target_keyword": "hvac faq"},
+    {"key": "contact", "type": "page", "target_keyword": "hvac contractor contact sherman oaks"}
+  ],
+  "seo": {
+    "primary_location": "Sherman Oaks, CA",
+    "service_radius": "25 miles",
+    "language": "en-US",
+    "schema_type": "HVACBusiness"
+  }
+}

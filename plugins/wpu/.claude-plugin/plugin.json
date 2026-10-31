@@ -1,0 +1,19 @@
+{
+  "name": "wpu",
+  "displayName": "WP Ultimate Build",
+  "version": "1.1.0",
+  "description": "Build, fix and optimise WordPress/Elementor sites through the WPU Bridge: design-to-Elementor builds (Claude Design or reference sites), custom plugins with a security gate, Rank Math/Yoast SEO from DataForSEO data, blog posts, speed and security. Merges Elementor Ready To Use Templates (Forge), WP Site Build and WP Site Doctor.",
+  "author": {
+    "name": "Webelite Digital"
+  },
+  "keywords": [
+    "wordpress",
+    "elementor",
+    "seo",
+    "rank-math",
+    "yoast",
+    "dataforseo",
+    "woocommerce"
+  ],
+  "license": "UNLICENSED"
+}

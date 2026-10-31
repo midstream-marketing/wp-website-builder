@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Design spec — the device inventory",
+  "description": "Written BEFORE composing anything. Enumerates the visual devices that make the reference look like itself, so the fidelity gate has something to check. See HANDBOOK/01-DESIGN-METHOD.md.",
+  "type": "object",
+  "required": ["mode", "devices"],
+  "properties": {
+    "reference": {
+      "type": ["string", "null"],
+      "description": "URL, screenshot path, or null for a specified-mode build with no reference."
+    },
+    "mode": {
+      "enum": ["match", "reference", "specified"],
+      "description": "match = the reference IS the spec, do not substitute your judgement. reference = a starting point you may improve on. specified = no reference supplied, so this file states the device system rather than extracting one."
+    },
+    "notes": {
+      "type": "string",
+      "description": "How the mode was decided, and any conflict between brief, reference and brand — resolved out loud."
+    },
+    "ground_system": { "type": "string" },
+    "type_system": { "type": "string" },
+    "button_vocabulary": { "type": "string" },
+    "card_anatomy": { "type": "string" },
+    "devices": {
+      "type": "array",
+      "minItems": 1,
+      "description": "An empty inventory is not a pass — it means the inventory step was skipped.",
+      "items": {
+        "type": "object",
+        "required": ["id", "device"],
+        "properties": {
+          "id": { "type": "string" },
+          "device": {
+            "type": "string",
+            "description": "What it LOOKS like, specifically. 'Three tinted cards: LABEL, title, image, caption' — not 'how it works section'."
+          },
+          "reference": {
+            "type": "string",
+            "description": "Where this device was observed: the reference, the logo, the client brief, or 'specified'."
+          },
+          "satisfied_by": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Component name(s) that actually emit it. Name the component that EMITS it — a device rendered inside a shared helper reads as MISSING, and the fix is naming the emitter, never loosening the gate."
+          },
+          "status": {
+            "enum": ["required", "substituted", "deferred"],
+            "default": "required"
+          },
+          "substitution_reason": {
+            "type": "string",
+            "description": "Required when status is 'substituted'. Truth reasons only — the client has no press coverage, no reviews, no figures. A content substitution never licenses a structural one."
+          },
+          "deferred_reason": {
+            "type": "string",
+            "description": "Required when status is 'deferred'. Say what unblocks it, so it is a trigger and not an excuse."
+          },
+          "never": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "The fallback you were tempted by. Add it the MOMENT you notice reaching for it. Evaluated GLOBALLY across the whole build, not scoped to this device — so only list a component with no honest use anywhere."
+          },
+          "never_reason": { "type": "string" },
+          "_why": {
+            "type": "string",
+            "description": "Why this device rather than the near-miss. Use this instead of a `never` entry when the near-miss has a legitimate use elsewhere in the build."
+          }
+        }
+      }
+    },
+    "never_global": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Components banned build-wide, for a design or a truth reason. Any component that renders authored review text belongs here on most builds."
+    }
+  }
+}

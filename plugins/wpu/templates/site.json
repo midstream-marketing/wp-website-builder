@@ -1,0 +1,65 @@
+{
+  "_comment": "One per client: sites/<slug>/site.json. NO secrets in this file - keys, passwords and tokens go in your own store: scripts/wpu-secret.ps1 set <slug> key | adminpass | sftp_pass | cpanel_token.",
+  "name": "Client name",
+  "baseUrl": "https://clientsite.com",
+  "user": "wp-admin login (password goes in the secret store as adminpass; only needed for install-bridge and admin audits)",
+  "remote": {
+    "url": "https://clientsite.com",
+    "auth": "key",
+    "restRoute": false,
+    "useCurl": false
+  },
+  "hosting": {
+    "_comment": "Emergency access when WordPress is down (/wpu:rescue). NO passwords or tokens here: wpu-secret.ps1 set <slug> sftp_pass | sftp_keypass | cpanel_token. Delete the parts the host does not offer.",
+    "sftp": {
+      "host": "ssh.clienthost.com",
+      "port": 22,
+      "user": "sftp-username",
+      "root": "/home/user/public_html",
+      "auth": "password",
+      "keyFile": ""
+    },
+    "cpanel": {
+      "host": "server123.clienthost.com",
+      "port": 2083,
+      "user": "cpanel-username",
+      "wpRoot": "public_html",
+      "domain": "clientsite.com"
+    }
+  },
+  "host": "e.g. Hostinger / WP Engine / Kinsta / SiteGround - and its quirks",
+  "builder": "elementor",
+  "seoPlugin": "rankmath | yoast | none",
+  "seo": {
+    "location": "Austin,Texas,United States",
+    "language": "en",
+    "site_type": "local_service",
+    "competitors": [
+      "competitor-one.com",
+      "competitor-two.com"
+    ]
+  },
+  "breakpoints": [
+    390,
+    768,
+    1440
+  ],
+  "urls": [
+    "/",
+    "/about/",
+    "/services/",
+    "/contact/"
+  ],
+  "perf_urls": [
+    "/",
+    "/services/"
+  ],
+  "navRetries": 2,
+  "cookieSeed": {},
+  "localStorageSeed": {},
+  "_local_only": "Fill these only when the site runs in LocalWP (scripts/detect.ps1 does it for you):",
+  "sitePath": "",
+  "phpDir": "",
+  "wpCli": "",
+  "dbPort": ""
+}

@@ -1,0 +1,146 @@
+{
+  "_comment": "Site plan for scripts/rplan.ps1. Every section is optional - leave out what you are not building yet. Pages, menus and templates are matched by slug/title, so re-running only changes what differs. Run WITHOUT 'apply' first and read the dry run.",
+  "site": {
+    "title": "Example Dairy Supplies",
+    "tagline": "Parts and servicing for Irish dairy farms",
+    "timezone": "Europe/Dublin",
+    "date_format": "j F Y",
+    "permalinks": "/%postname%/",
+    "discourage_search_engines": true,
+    "remove_default_content": true
+  },
+  "plugins": {
+    "_comment": "install = wordpress.org slugs (downloaded and activated). activate = plugin files already on the site.",
+    "install": [
+      "elementor",
+      "woocommerce"
+    ],
+    "activate": []
+  },
+  "theme": {
+    "_comment": "install = wordpress.org theme slug; activate = folder name of an installed theme.",
+    "install": "hello-elementor",
+    "activate": "hello-elementor"
+  },
+  "elementor": {
+    "disable_default_colors": true,
+    "disable_default_fonts": true,
+    "container": true,
+    "load_google_fonts_locally": true
+  },
+  "kit": {
+    "_comment": "Global colours and fonts in the active Elementor kit. 'extra_fonts' are loaded site-wide for theme/widget CSS that names a font nothing else loads (audit/fonts.mjs finds these).",
+    "colors": {
+      "primary": "#17569B",
+      "secondary": "#15202B",
+      "text": "#3D4A57",
+      "accent": "#F2B705"
+    },
+    "fonts": {
+      "primary": {
+        "family": "Montserrat",
+        "weight": "700"
+      },
+      "secondary": {
+        "family": "Montserrat",
+        "weight": "600"
+      },
+      "text": {
+        "family": "Nunito",
+        "weight": "400"
+      },
+      "accent": {
+        "family": "Montserrat",
+        "weight": "500"
+      }
+    },
+    "extra_fonts": [
+      "Quicksand"
+    ]
+  },
+  "pages": [
+    {
+      "slug": "home",
+      "title": "Home",
+      "page_template": "elementor_header_footer",
+      "elementor_template": "Home"
+    },
+    {
+      "slug": "about",
+      "title": "About",
+      "page_template": "elementor_header_footer",
+      "elementor_template": "About"
+    },
+    {
+      "slug": "services",
+      "title": "Services",
+      "page_template": "elementor_header_footer"
+    },
+    {
+      "slug": "contact",
+      "title": "Contact",
+      "page_template": "elementor_header_footer",
+      "elementor_template": "Contact"
+    },
+    {
+      "slug": "blog",
+      "title": "Blog"
+    },
+    {
+      "slug": "privacy-policy",
+      "title": "Privacy Policy",
+      "status": "draft",
+      "_comment": "Legal copy is a template until a lawyer reviews it - keep draft until then."
+    }
+  ],
+  "front_page": "home",
+  "posts_page": "blog",
+  "menus": [
+    {
+      "name": "Main menu",
+      "location": "menu-1",
+      "items": [
+        {
+          "page": "home"
+        },
+        {
+          "page": "about"
+        },
+        {
+          "page": "services"
+        },
+        {
+          "title": "Shop",
+          "url": "/shop/"
+        },
+        {
+          "page": "contact"
+        }
+      ]
+    }
+  ],
+  "theme_builder": [
+    {
+      "template": "Site Header",
+      "conditions": [
+        "include/general"
+      ]
+    },
+    {
+      "template": "Site Footer",
+      "conditions": [
+        "include/general"
+      ]
+    }
+  ],
+  "woocommerce": {
+    "create_pages": true,
+    "currency": "EUR",
+    "base_country": "IE",
+    "prices_include_tax": false
+  },
+  "options": {
+    "_comment": "Any other WordPress options, set as-is. Only use for settings you are sure of.",
+    "default_comment_status": "closed"
+  }
+}
