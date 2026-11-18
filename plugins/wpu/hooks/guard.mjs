@@ -84,6 +84,22 @@ if (/(Bash|PowerShell)/.test(tool) && typeof ti.command === 'string') {
 		[/rmedia\.ps1\b/i, 'uploads files to the live Media Library'],
 		[/install-(bridge|plugin-zip)\.mjs\b/i, 'installs a plugin on the live site'],
 	];
+	// Bridge tools (rtool.ps1): ASK unless the whole command is one plain call without the word apply.
+	// Without ?apply=1 the site itself refuses to change anything (a dry run at most), and rtool.ps1 only adds
+	// it for a literal "apply" argument - so the one thing to rule out is that word arriving some other way
+	// (built at run time, hidden by quoting, or by calling the bridge route directly).
+	if (/rtool|Invoke-Wpu\b|_remote\.ps1|wpu\/v1\/tool|rest_route=\/wpu|scripts[\\/][^\s"']*[*?\[]/i.test(cmd)) {
+		const PS = String.raw`^\s*(?:\$env:WPU_SITE\s*=\s*['"]?[a-z0-9_-]+['"]?\s*;\s*)?(?:powershell|pwsh)(?:\.exe)?(?:\s+-NoProfile)?(?:\s+-ExecutionPolicy\s+Bypass)?\s+-File\s+["']?[^\s"';&|<>$\`]*scripts[\\/]rtool\.ps1["']?`;
+		const FILEARG = String.raw`(?:[\w./\\:,-]+|"[\w./\\:, -]+")`;
+		const JSONARG = String.raw`'\{[\w\s":,.\[\]{}\/@#%+=-]*\}'`;
+		const PLAIN = new RegExp(PS + String.raw`\s+[a-z0-9_]+(?:\s+(?:` + FILEARG + '|' + JSONARG + String.raw`))?\s*$`, 'i');
+		const body = cmd.replace(/^\s*\$env:WPU_SITE\s*=\s*['"]?[a-z0-9_-]+['"]?\s*;\s*/i, '');
+		const plain = !/apply/i.test(cmd) && !/[\r\n;&<>|$`]/.test(body) && PLAIN.test(cmd);
+		if (!plain) {
+			decide('ask', 'WP Ultimate Build: this bridge tool call may CHANGE the live site (content, page builder, shop, updates or theme). Read what it will change first; every change has an undo (rtool.ps1 undo <change_id> apply).');
+		}
+	}
+
 	// Hosting tools: ASK unless the whole command is one plain read. Matching "apply" was not enough -
 	// it can be built at run time ($(echo apply), quotes, line continuations), so the rule is inverted:
 	// only an exact, metacharacter-free read form passes without a person.

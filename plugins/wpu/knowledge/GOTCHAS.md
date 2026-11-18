@@ -5554,7 +5554,7 @@ you hunting. Build the pattern with an optional backslash before each separator 
 single-quoted string) and escape the replacement the same way, or the JSON stops parsing. Always
 `json_decode()` before and after, and `wp_slash()` on the way into `update_post_meta`.
 
-## A host security layer can eat or block individual uploads (2026-09-28, webelitelawncare)
+## A host security layer can eat or block individual uploads (2026-09-28, a staging site)
 Three 512x512 icons (twice PNG, once JPEG) each had their **original** removed from `uploads/` within
 about two minutes, while the 150x150/300x300 thumbnails the server itself re-encoded were left in place
 and every original from earlier the same day survived. Then the source logo began having its

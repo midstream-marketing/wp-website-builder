@@ -1,8 +1,8 @@
 === WPU Bridge ===
-Contributors: webelitedigital
+Contributors: midstreammarketing
 Requires at least: 6.0
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.2.0
 License: GPLv2 or later
 
 TEMPORARY build-time bridge for the WP Ultimate Build toolkit. Delete it at handover.
@@ -23,6 +23,9 @@ wpu/v1, with no hosting access:
 * /seo      - read/write SEO title, description, focus keyword, canonical,
               noindex and schema for Rank Math or Yoast, with backup and rollback
 * /posts    - create or update blog posts (drafts by default)
+* /tools, /tool - typed tools: page content, Gutenberg blocks, page builders (Elementor, Divi,
+              Bricks, Beaver Builder, Breakdance, SeedProd), WooCommerce, ACF, updates and draft
+              themes. Fixed actions with checked arguments, logged, with undo. No code is run.
 
 Safety:
 

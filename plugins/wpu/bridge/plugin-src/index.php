@@ -1,1 +1,5 @@
-<?php // Silence is golden. wpsec:ignore - empty directory index, outputs nothing.
+<?php
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+// Silence is golden.

@@ -124,7 +124,10 @@ function Invoke-Wpu {
         [Parameter(Mandatory = $true)][string] $Route,
         [string] $Method = 'GET',
         $Body = $null,
-        [int] $TimeoutSec = 600
+        [int] $TimeoutSec = 600,
+        # -RawJson: $Body is already JSON text and is sent as it is. Needed for tool arguments, which nest
+        # deeper than ConvertTo-Json's depth and must not be re-shaped on the way.
+        [switch] $RawJson
     )
 
     $params = @{
@@ -139,7 +142,7 @@ function Invoke-Wpu {
     }
 
     if ($null -ne $Body) {
-        $json = $Body | ConvertTo-Json -Depth 8 -Compress
+        $json = if ($RawJson) { [string]$Body } else { $Body | ConvertTo-Json -Depth 8 -Compress }
         # Send bytes, not a string: otherwise the body is encoded with the
         # console codepage and any non-ASCII in a script arrives mangled.
         $params.Body        = [Text.Encoding]::UTF8.GetBytes($json)

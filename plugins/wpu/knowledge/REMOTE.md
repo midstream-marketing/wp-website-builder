@@ -68,9 +68,8 @@ fails safe.
 
 ## Setup, per client site
 
-```powershell
-powershell -File bin/build-bridge.ps1     # -> remote/wp-site-build-bridge.zip
-```
+Use the standard zip that ships with the plugin: `bridge/release/wpu-bridge-<version>.zip` (one file for every site;
+its SHA-256 is beside it). `scripts/build-bridge.ps1` is only for testing an unreleased change to the bridge.
 
 1. **Plugins > Add New > Upload Plugin** — install and activate the zip.
 2. **Users > Profile > Application Passwords** — add one named `wp-site-build`.

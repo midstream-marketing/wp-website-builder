@@ -7,9 +7,9 @@
  *               media, SEO fields, posts and maintenance scripts - with no
  *               hosting access. DELETE THIS PLUGIN AT HANDOVER - it
  *               self-deactivates after 30 days regardless.
- * Version:      2.0.0
+ * Version:      2.2.0
  * Requires PHP: 7.4
- * Author:       Webelite Digital
+ * Author:       Midstream Marketing
  *
  * Merged from WP Site Doctor Bridge 1.4.0 (wpsd/v1) and WP Site Build Bridge
  * 1.0.0 (wpsb/v1). New namespace wpu/v1, so it installs beside either of them.
@@ -52,13 +52,23 @@ if ( ! defined( 'ABSPATH' ) ) {
  * script's entire output on any exit(), which is every dry run. If a site
  * reports 1.0.0 from /doctor, replace it. See docs/GOTCHAS.md.
  */
-define( 'WPU_BRIDGE_VERSION', '2.0.0' );
+define( 'WPU_BRIDGE_VERSION', '2.2.0' );
 define( 'WPU_BRIDGE_NS', 'wpu/v1' );
+
 
 /** Days from activation until the bridge switches itself off. */
 if ( ! defined( 'WPU_BRIDGE_DAYS' ) ) {
 	define( 'WPU_BRIDGE_DAYS', 30 );
 }
+
+// Typed tools (content, Gutenberg, page builders, WooCommerce, ACF, updates, draft themes): /tools and /tool.
+define( 'WPU_BT_VERSION', WPU_BRIDGE_VERSION );
+define( 'WPU_BT_FILE', __FILE__ );
+define( 'WPU_BT_DIR', __DIR__ );
+foreach ( array( 'core', 'registry', 'tools-site', 'tools-content', 'tools-builders', 'tools-updates', 'tools-woo', 'tools-acf', 'tools-pagebuilders', 'tools-themes', 'ability-guard', 'tools-abilities', 'tools-divi', 'tools-divi5' ) as $wpu_bt_file ) {
+	require_once __DIR__ . '/tools/' . $wpu_bt_file . '.php';
+}
+unset( $wpu_bt_file );
 
 /* -------------------------------------------------------------------------
  * Lifecycle
@@ -71,12 +81,16 @@ function wpu_bridge_activate() {
 	// keys would come back to life on a re-install. Every activation starts clean.
 	delete_option( 'wpu_bridge_keys' );
 	delete_option( 'wpu_bridge_audit' );
+	// The same goes for what the typed tools stored: old undo copies, preview links and switches.
+	wpu_bt_purge();
 }
 
 register_deactivation_hook( __FILE__, 'wpu_bridge_deactivate' );
 function wpu_bridge_deactivate() {
 	delete_option( 'wpu_bridge_activated' );
 	delete_option( 'wpu_bridge_keys' );
+	// The tools' undo copies hold page content: they go when the bridge goes.
+	wpu_bt_purge();
 }
 
 function wpu_bridge_activated_at() {
@@ -195,6 +209,15 @@ add_action( 'rest_api_init', function () {
 	}
 
 	$auth = array( 'permission_callback' => 'wpu_bridge_permission' );
+
+	register_rest_route( WPU_BRIDGE_NS, '/tools', $auth + array(
+		'methods'  => 'GET',
+		'callback' => 'wpu_bridge_tools',
+	) );
+	register_rest_route( WPU_BRIDGE_NS, '/tool', $auth + array(
+		'methods'  => 'POST',
+		'callback' => 'wpu_bridge_tool',
+	) );
 
 	register_rest_route( WPU_BRIDGE_NS, '/doctor', $auth + array(
 		'methods'  => 'GET',
@@ -425,6 +448,22 @@ function wpu_bridge_admin_page() {
 		}
 	}
 
+	if ( isset( $_POST['wpu_bridge_switches'] ) ) {
+		check_admin_referer( 'wpu_bridge_switches' );
+		$sw = wpu_bt_settings();
+		foreach ( array( 'read_only', 'allow_updates', 'allow_orders', 'allow_themes', 'divi_addons', 'builder_abilities' ) as $k ) {
+			$sw[ $k ] = ! empty( $_POST[ 'wpu_sw_' . $k ] );
+		}
+		$mode            = isset( $_POST['wpu_sw_abilities'] ) ? sanitize_key( wp_unslash( $_POST['wpu_sw_abilities'] ) ) : 'all';
+		$sw['abilities'] = in_array( $mode, array( 'all', 'readonly', 'off' ), true ) ? $mode : 'all';
+		update_option( 'wpu_bt_settings', $sw, false );
+		if ( empty( $sw['allow_themes'] ) ) {
+			delete_option( 'wpu_bt_theme_previews' ); // existing preview links stop working
+		}
+		wpu_bridge_record( 'switches:saved', 0, array() );
+		add_settings_error( 'wpu_bridge', 'wpu_saved', 'Tool switches saved.', 'updated' );
+	}
+
 	$keys   = wpu_bridge_keys();
 	$config = wp_json_encode( array(
 		'url'  => home_url(),
@@ -488,8 +527,79 @@ function wpu_bridge_admin_page() {
 			</p>
 			<?php submit_button( 'Make a connection key', 'primary', 'submit', false ); ?>
 		</form>
+
+		<h2>Tool switches</h2>
+		<p>What the team may change on this site through the bridge's typed tools. Every change is logged with the member's name.</p>
+		<?php $sw = wpu_bt_settings(); ?>
+		<form method="post">
+			<?php wp_nonce_field( 'wpu_bridge_switches' ); ?>
+			<input type="hidden" name="wpu_bridge_switches" value="1">
+			<p><label><input type="checkbox" name="wpu_sw_read_only" value="1" <?php checked( ! empty( $sw['read_only'] ) ); ?>> Read only: the tools may look, not change</label></p>
+			<p><label><input type="checkbox" name="wpu_sw_allow_updates" value="1" <?php checked( ! empty( $sw['allow_updates'] ) ); ?>> Plugin and theme updates (with a check before and after, and rollback)</label></p>
+			<p><label><input type="checkbox" name="wpu_sw_allow_orders" value="1" <?php checked( ! empty( $sw['allow_orders'] ) ); ?>> WooCommerce order changes</label></p>
+			<p><label><input type="checkbox" name="wpu_sw_allow_themes" value="1" <?php checked( ! empty( $sw['allow_themes'] ) ); ?>> Draft themes, theme previews and switching the live theme</label></p>
+			<p><label><input type="checkbox" name="wpu_sw_divi_addons" value="1" <?php checked( ! empty( $sw['divi_addons'] ) ); ?>> Divi modules from other plugins may be placed in layouts (Divi's own modules are always allowed; code modules never are)</label></p>
+			<p><label><input type="checkbox" name="wpu_sw_builder_abilities" value="1" <?php checked( ! empty( $sw['builder_abilities'] ) ); ?>> Builder AI actions: build and change pages with Breakdance's, Oxygen's or SeedProd's own AI actions</label><br>
+			<span class="description">Off by default. Those actions belong to the builder and do not filter what they are given. The bridge checks every request for code, blocks resets and site-wide code settings, asks for a go-ahead before anything live changes, and keeps an undo. That lowers the risk but cannot remove it.</span></p>
+			<p><label>Actions other plugins offer (WordPress Abilities API):
+				<select name="wpu_sw_abilities">
+					<option value="all" <?php selected( $sw['abilities'], 'all' ); ?>>all</option>
+					<option value="readonly" <?php selected( $sw['abilities'], 'readonly' ); ?>>look-ups only</option>
+					<option value="off" <?php selected( $sw['abilities'], 'off' ); ?>>off</option>
+				</select></label></p>
+			<?php submit_button( 'Save switches', 'secondary', 'submit', false ); ?>
+		</form>
 	</div>
 	<?php
+}
+
+/* -------------------------------------------------------------------------
+ * /tools and /tool - typed tools.
+ *
+ * Fixed, named actions with checked arguments (see tools/). Nothing here runs code that is sent: that is
+ * what /run is for, and /run needs more rights. A tool that changes the site needs "apply": true.
+ * ---------------------------------------------------------------------- */
+
+/** GET /tools            -> every tool: name, what it does, whether it writes, its argument names
+ *  GET /tools?name=a,b   -> those tools with their full input schema */
+function wpu_bridge_tools( WP_REST_Request $request ) {
+	$avail = wpu_bt_tools_available();
+	$names = array_filter( array_map( 'sanitize_key', explode( ',', (string) $request->get_param( 'name' ) ) ) );
+	$out   = array();
+	foreach ( $avail as $name => $t ) {
+		if ( $names && ! in_array( $name, $names, true ) ) {
+			continue;
+		}
+		$row = array( 'name' => $name, 'title' => $t['title'], 'writes' => (bool) $t['write'] );
+		if ( $names ) {
+			$row['description']  = $t['description'];
+			$row['destructive']  = (bool) $t['destructive'];
+			$row['input_schema'] = wpu_bt_tool_schema( $name, $t )['inputSchema'];
+		} else {
+			$row['args'] = array_keys( (array) $t['props'] );
+		}
+		$out[] = $row;
+	}
+	$off = array_values( array_diff( array_keys( $GLOBALS['wpu_bt_tools'] ), array_keys( $avail ) ) );
+	return rest_ensure_response( array( 'ok' => true, 'count' => count( $out ), 'tools' => $out, 'not_available_here' => $off ) );
+}
+
+/** POST /tool?apply=1 { "tool": "content_update", "args": { ... } }   (leave ?apply=1 off for reads and dry runs) */
+function wpu_bridge_tool( WP_REST_Request $request ) {
+	$body = $request->get_json_params();
+	if ( ! is_array( $body ) || empty( $body['tool'] ) || ! is_string( $body['tool'] ) ) {
+		return rest_ensure_response( array( 'ok' => false, 'error' => 'Send JSON: { "tool": "<name>", "args": { ... } } and add ?apply=1 to the address for a change.' ) );
+	}
+	$args = isset( $body['args'] ) ? $body['args'] : array();
+	// "apply" is read from the address (?apply=1), never from the JSON body, so nothing inside the
+	// arguments can switch it on.
+	$query = $request->get_query_params();
+	$apply = isset( $query['apply'] ) && '1' === (string) $query['apply'];
+	$out   = wpu_bt_call( sanitize_key( $body['tool'] ), is_array( $args ) ? $args : array(), $apply );
+	if ( is_wp_error( $out ) ) {
+		return rest_ensure_response( array( 'ok' => false, 'tool' => sanitize_key( $body['tool'] ), 'error' => $out->get_error_message() ) );
+	}
+	return rest_ensure_response( array( 'ok' => true, 'tool' => sanitize_key( $body['tool'] ), 'result' => $out ) );
 }
 
 /* -------------------------------------------------------------------------
@@ -1058,7 +1168,7 @@ function wpu_bridge_record( $what, $bytes, $args ) {
 		'bytes' => (int) $bytes,
 		'args'  => $args,
 	);
-	update_option( 'wpu_bridge_audit', array_slice( $entries, -50 ), false );
+	update_option( 'wpu_bridge_audit', array_slice( $entries, -200 ), false );
 }
 
 function wpu_bridge_audit() {

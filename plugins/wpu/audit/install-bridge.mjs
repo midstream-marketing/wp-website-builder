@@ -10,16 +10,25 @@
 //   node audit/install-bridge.mjs --dry      # log in and report state only
 import path from 'node:path';
 import fs from 'node:fs';
-import { launch, cfg, url, ROOT, WORKSPACE } from '../lib/lib.mjs';
+import { launch, cfg, url, ROOT, WORKSPACE, PLUGIN_ROOT } from '../lib/lib.mjs';
 
 const dry = process.argv.includes('--dry');
 const conf = cfg();
-const zip = path.join(WORKSPACE, 'dist', 'wpu-bridge.zip'); // made by scripts/build-bridge.ps1
+// The standard, versioned zip that ships with the plugin (bridge/release/), so every site gets the
+// same file. A zip you built yourself in <workspace>/dist/ wins - for testing an unreleased change.
+const releaseDir = path.join(PLUGIN_ROOT, 'bridge', 'release');
+const released = fs.existsSync(releaseDir)
+	? fs.readdirSync(releaseDir).filter((f) => /^wpu-bridge-[\d.]+\.zip$/.test(f))
+		.sort((a, b) => a.localeCompare(b, undefined, { numeric: true })).pop()
+	: null;
+const custom = path.join(WORKSPACE, 'dist', 'wpu-bridge.zip');
+const zip = fs.existsSync(custom) ? custom : released ? path.join(releaseDir, released) : null;
 
-if (!fs.existsSync(zip)) {
-	console.error(`missing ${zip} — run: powershell -File scripts/build-bridge.ps1`);
-	process.exit(2);
+if (!zip) {
+	console.error('No bridge zip found. Expected bridge/release/wpu-bridge-<version>.zip in the plugin.');
+	process.exit(1);
 }
+console.log(`bridge zip: ${zip}`);
 
 const browser = await launch();
 const ctx = await browser.newContext({ viewport: { width: 1500, height: 950 }, ignoreHTTPSErrors: true });
