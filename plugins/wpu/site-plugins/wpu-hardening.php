@@ -5,7 +5,7 @@
  *              until turned on in the wpu_hardening option (php/hardening-set.php), so installing
  *              this file changes nothing by itself. Install as an mu-plugin.
  * Version:     1.0.0
- * Author:      Webelite Digital
+ * Author:      Midstream Marketing
  *
  * Measures (option keys):
  *   no_file_edit      - DISALLOW_FILE_EDIT: no theme/plugin code editor in wp-admin

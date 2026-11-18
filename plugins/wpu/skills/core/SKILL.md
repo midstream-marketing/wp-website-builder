@@ -73,6 +73,27 @@ Local LocalWP twins: `wp`, `wpphp`, `php`, `plan`, `detect`, `push-mu`.
 skill. **Tools**: `tools/seo/dataforseo.py`, `tools/seo/seo_plan.py`, `tools/perf/psi.py`, `tools/security/outside.py`,
 `tools/hosting/sftp.py` and `tools/hosting/cpanel.py` (the back door - see the `rescue` skill).
 
+**Typed tools** (`scripts/rtool.ps1`, WPU Bridge 2.1+): fixed, named actions on the site with checked
+arguments - no script is sent. Prefer them over `rwpphp` scripts for routine work:
+content and Gutenberg blocks (Kadence, Spectra), page text in any builder (`builder_page_text` /
+`builder_replace_text`: Elementor, Divi 4/5, Bricks, Beaver Builder, Breakdance, SeedProd), Divi 4 and Divi 5 layouts
+(`divi_*`), SEO fields, media, WooCommerce, ACF, draft themes with preview links (`/wpu:theme`), other plugins'
+actions (`abilities_list`, `ability_run_readonly`, `ability_run`), and `updates_*` (checked, auto-rolled-back
+updates).
+
+```text
+rtool.ps1 list [word]              what this site offers
+rtool.ps1 info <tool>              a tool's arguments
+rtool.ps1 <tool> [args.json]       read, or dry run
+rtool.ps1 <tool> <args.json> apply change the site (the member is asked first)
+rtool.ps1 undo <change_id> apply   put a change back
+```
+
+Write the arguments to `sites/<slug>/work/<name>.args.json` and pass the file; inline JSON is only for one or two
+short values. Every write returns a `change_id`. A tool listed under "not available" needs its plugin active or
+its switch on (wp-admin > Tools > WPU Bridge > Tool switches). The bridge's `/run` scripts stay the tool for
+builds (Forge templates, `rwpphp`).
+
 Run Node and Python from the workspace so outputs land in the site folder:
 `node "${CLAUDE_PLUGIN_ROOT}/audit/audit.mjs"`, `python "${CLAUDE_PLUGIN_ROOT}/tools/seo/dataforseo.py" ...`.
 

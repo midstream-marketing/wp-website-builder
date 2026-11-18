@@ -11,6 +11,7 @@
 #   powershell -File scripts/wpu-secret.ps1 has  <site> key            prints yes/no, never the value
 #   powershell -File scripts/wpu-secret.ps1 get  <site> key            prints the value (scripts use this; avoid running it in a chat)
 #   powershell -File scripts/wpu-secret.ps1 rm   <site> [name]
+#   (set-stdin <site> <name> reads the value from stdin - used by WPU Desk)
 #
 # "set" prompts with hidden input. Run it in your own terminal, not through Claude,
 # so the value never appears in a conversation.
@@ -18,7 +19,7 @@
 $ErrorActionPreference = 'Stop'
 
 if ($args.Count -lt 2) {
-    Get-Content $PSCommandPath | Select-Object -Skip 1 -First 15 | ForEach-Object { $_ -replace '^# ?', '' }
+    Get-Content $PSCommandPath | Select-Object -Skip 1 -First 16 | ForEach-Object { $_ -replace '^# ?', '' }
     exit 2
 }
 $mode = $args[0].ToLower(); $scope = $args[1].ToLower(); $name = if ($args.Count -ge 3) { $args[2].ToLower() } else { '' }
@@ -30,6 +31,16 @@ switch ($mode) {
         if ($v.Length -eq 0) { throw 'empty value - nothing saved' }
         Set-WpuSecret -Scope $scope -Name $name -Value $v
         Write-Host "saved $scope/$name (encrypted for $env:USERNAME on $env:COMPUTERNAME)" -ForegroundColor Green
+    }
+    'set-stdin' {
+        # Used by WPU Desk: the value arrives on stdin from the local dashboard, never on the command line.
+        if (-not $name) { throw 'set-stdin needs a name' }
+        $plain = [Console]::In.ReadLine()
+        if ([string]::IsNullOrEmpty($plain)) { throw 'empty value - nothing saved' }
+        $v = ConvertTo-SecureString -String $plain -AsPlainText -Force
+        $plain = $null
+        Set-WpuSecret -Scope $scope -Name $name -Value $v
+        Write-Host "saved $scope/$name"
     }
     'has' { if (Get-WpuSecret -Scope $scope -Name $name) { 'yes' } else { 'no'; exit 1 } }
     'get' { $v = Get-WpuSecret -Scope $scope -Name $name; if (-not $v) { exit 1 }; [Console]::Out.Write($v) }

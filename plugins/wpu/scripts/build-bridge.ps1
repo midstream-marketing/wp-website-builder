@@ -3,6 +3,10 @@
 #   powershell -File scripts/build-bridge.ps1            -> <workspace>/dist/wpu-bridge.zip
 #   powershell -File scripts/build-bridge.ps1 -Out x.zip
 #
+# Day to day you do NOT need this: the plugin ships a standard zip in bridge/release/. Use this only to test
+# a change to bridge/wpu-bridge.php. To RELEASE a change: bump WPU_BRIDGE_VERSION, then
+#   -Out bridge/release/wpu-bridge-<version>.zip, write its SHA-256 beside it, delete the old zip, bump the plugin version.
+#
 # Not Compress-Archive: Windows PowerShell writes backslash entry names and no
 # directory entry, and WordPress then installs into a double-nested folder
 # ("Plugin file does not exist" on Activate). Written by hand instead:
@@ -25,6 +29,8 @@ $files = [ordered]@{
     'index.php'      = Join-Path $root 'bridge/plugin-src/index.php'
     'readme.txt'     = Join-Path $root 'bridge/plugin-src/readme.txt'
 }
+# The typed tools (bridge/tools/*.php) ship inside the plugin as tools/.
+Get-ChildItem (Join-Path $root 'bridge/tools') -Filter *.php | Sort-Object Name | ForEach-Object { $files["tools/$($_.Name)"] = $_.FullName }
 foreach ($src in $files.Values) { if (-not (Test-Path $src)) { throw "missing source file: $src" } }
 
 Add-Type -AssemblyName System.IO.Compression | Out-Null

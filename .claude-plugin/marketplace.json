@@ -1,18 +1,18 @@
 {
   "name": "webelite-wpu",
   "owner": {
-    "name": "Webelite Digital"
+    "name": "Midstream Marketing"
   },
   "metadata": {
-    "description": "Webelite Digital's private Claude Code plugins.",
-    "version": "1.1.0"
+    "description": "Midstream Marketing's private Claude Code plugins.",
+    "version": "2.1.0"
   },
   "plugins": [
     {
       "name": "wpu",
       "source": "./plugins/wpu",
-      "description": "WP Ultimate Build: build Elementor sites from Claude Design or reference sites, custom plugins, Rank Math/Yoast SEO with DataForSEO, posts, speed and security - through the WPU Bridge, plus a hosting back door (SFTP/SSH, cPanel API) for when the site is down.",
-      "version": "1.1.0"
+      "description": "WP Ultimate Build: build Elementor, Gutenberg and page-builder sites from Claude Design or reference sites, custom plugins, Rank Math/Yoast SEO with DataForSEO, posts, speed and security - through the WPU Bridge, plus a hosting back door (SFTP/SSH, cPanel API) for when the site is down.",
+      "version": "2.1.0"
     }
   ]
 }

@@ -29,7 +29,9 @@ It moves credentials into their encrypted store and copies each site's notes and
 
 ## 3. Bridge
 
-1. `powershell -File "${CLAUDE_PLUGIN_ROOT}/scripts/build-bridge.ps1"` -> `dist/wpu-bridge.zip`.
+1. The zip is the **standard release** that ships with the plugin - the same file for every site:
+   `${CLAUDE_PLUGIN_ROOT}/bridge/release/wpu-bridge-<version>.zip` (the highest version there). Tell the member that
+   path. Do not build a new one per site; `scripts/build-bridge.ps1` is only for testing an unreleased bridge change.
 2. The member installs it: Plugins > Add New > Upload > Activate. (Or `node "${CLAUDE_PLUGIN_ROOT}/audit/install-bridge.mjs"`
    after they saved the wp-admin password with `wpu-secret.ps1 set <slug> adminpass` - the guard will ask them to approve.)
 3. The member makes their key: **Tools > WPU Bridge > their name > Make a connection key**, then in their own terminal:

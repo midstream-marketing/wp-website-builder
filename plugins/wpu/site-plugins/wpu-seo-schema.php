@@ -4,7 +4,7 @@
  * Description: Prints the JSON-LD stored in a page's _wpu_schema field (written by WP Ultimate Build).
  *              Permanent and tiny: it stays after the WPU Bridge is removed. Install as an mu-plugin.
  * Version:     1.0.0
- * Author:      Webelite Digital
+ * Author:      Midstream Marketing
  *
  * Why a separate file: the bridge expires and deletes itself, but schema has to keep printing.
  *
