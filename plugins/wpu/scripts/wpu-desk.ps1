@@ -48,7 +48,7 @@ if (-not (Test-Path $server)) {
     $cands = Get-ChildItem -Path (Join-Path $env:USERPROFILE '.claude\plugins') -Recurse -Filter 'server.mjs' -ErrorAction SilentlyContinue |
         Where-Object { $_.FullName -match '[\\/]wpu[\\/].*[\\/]desk[\\/]server\.mjs$' } |
         Sort-Object LastWriteTime -Descending
-    if (-not $cands) { throw 'WP Ultimate Build is not installed for this Windows user. Install the plugin in Claude Code first (/plugin install wpu@webelite-wpu).' }
+    if (-not $cands) { throw 'WP Ultimate Build is not installed for this Windows user. Install the plugin in Claude Code first (/plugin install wpu@wp-website-builder).' }
     $server = $cands[0].FullName
 }
 if (-not (Get-Command node -ErrorAction SilentlyContinue)) { throw 'Node.js is not installed. Install it from nodejs.org (LTS), then start the Desk again.' }

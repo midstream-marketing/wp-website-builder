@@ -1,4 +1,4 @@
-# webelite-wpu: Claude Code marketplace
+# wp-website-builder: Claude Code marketplace
 
 Private plugin marketplace for Midstream Marketing. It contains one plugin:
 

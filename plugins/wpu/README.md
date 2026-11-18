@@ -68,12 +68,12 @@ Set it up when you add a site, not during an outage. `/wpu:new-site` asks for it
 ```json
 {
   "extraKnownMarketplaces": {
-    "webelite-wpu": {
+    "wp-website-builder": {
       "source": { "source": "github", "repo": "midstream-marketing/wp-website-builder" }
     }
   },
   "enabledPlugins": {
-    "wpu@webelite-wpu": true
+    "wpu@wp-website-builder": true
   },
   "forceLoginMethod": "claudeai",
   "forceLoginOrgUUID": "<your organization UUID>"
